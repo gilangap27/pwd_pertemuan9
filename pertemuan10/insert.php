@@ -41,19 +41,19 @@ if (isset($_POST['tambah'])) {
       <li>
         <label>
           Nama :
-          <input type="text" name="nama">
+          <input type="text" name="nama" required>
         </label>
       </li>
       <li>
         <label>
           Prodi :
-          <input type="text" name="prodi">
+          <input type="text" name="prodi" required>
         </label>
       </li>
       <li>
         <label>
           Foto :
-          <input type="text" name="foto">
+          <input type="text" name="foto" required>
         </label>
       </li>
       <li>

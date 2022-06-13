@@ -2,10 +2,7 @@
 require 'function.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
-?>  
-
-
-
+?>
 
 <!-- halaman awal yg menampilkan seluruh data yg ada di db mahasiswa -->
 <!DOCTYPE html>
@@ -20,35 +17,37 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 </head>
 
 <body>
-  <h1>List Data Mahasiswa</h1>
-  <a href="insert.php">Tambah Data</a>
-  <table class="table table-hover">
-    <!-- baris header-  -->
-    <tr>
-      <th>No</th>
-      <th>Foto</th>
-      <th>NIM</th>
-      <th>Nama</th>
-      <th>Prodi</th>
-      <th>Aksi</th>
-    </tr>
-
-    <!-- baris data -->
-    <!-- looping -->
-    <?php $i = 1;
-    foreach ($mahasiswa as $mhs) : ?>
+  <div class="container">
+    <h1>List Data Mahasiswa</h1>
+    <a href="insert.php">Tambah Data</a>
+    <table class="table table-hover">
+      <!-- baris header-  -->
       <tr>
-        <td><?= $i++; ?></td>
-        <td><img src="<?= $mhs['foto']; ?>" width="50px"></td>
-        <td><?= $mhs['nim']; ?></td>
-        <td><?= $mhs['nama']; ?></td>
-        <td><?= $mhs['prodi']; ?></td>
-        <td>
-          <a href="">Ubah</a> | <a href="hapus.php?id=<?= $mhs['id']; ?>" onclick="return confirm ('apakah anda yakin?');">Hapus</a>
-        </td>
+        <th>No</th>
+        <th>Foto</th>
+        <th>NIM</th>
+        <th>Nama</th>
+        <th>Prodi</th>
+        <th>Aksi</th>
       </tr>
-    <?php endforeach; ?>
-  </table>
+
+      <!-- baris data -->
+      <!-- looping -->
+      <?php $i = 1;
+      foreach ($mahasiswa as $mhs) : ?>
+        <tr>
+          <td><?= $i++; ?></td>
+          <td><img src="<?= $mhs['foto']; ?>" width="50px"></td>
+          <td><?= $mhs['nim']; ?></td>
+          <td><?= $mhs['nama']; ?></td>
+          <td><?= $mhs['prodi']; ?></td>
+          <td>
+            <a href="update.php?id=<?= $mhs['id'] ?>">Ubah</a> | <a href="hapus.php?id=<?= $mhs['id']; ?>" onclick="return confirm ('apakah anda yakin?');">Hapus</a>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </table>
+  </div>
 </body>
 
 </html>

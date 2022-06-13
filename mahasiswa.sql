@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2022 at 02:33 AM
+-- Generation Time: Jun 13, 2022 at 11:24 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -40,8 +40,29 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `prodi`, `foto`) VALUES
-(1, '20410100060', 'Gilang', 'Sistem Informasi', 'FOTO'),
-(1, '20200100123', 'Adi', 'Teknik Mesin', 'FOTO');
+(1, '20410100060', 'Gilang', 'Sistem Informasi', 'profile1.png'),
+(2, '20450100078', 'Doni', 'Teknik Industri', 'profile2.png'),
+(3, '20300100012', 'Iwan', 'Teknik Kapal', 'profile1.png');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

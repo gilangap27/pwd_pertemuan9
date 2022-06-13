@@ -46,3 +46,27 @@ function deleteData($a)
   mysqli_query($con, $query) or die(mysqli_error($con));
   return mysqli_affected_rows($con);
 }
+
+function updateData($tambah)
+{
+  $con = koneksi();
+
+  $id = $tambah['id'];
+  $nim = htmlspecialchars($tambah['nim']);
+  $nama = htmlspecialchars($tambah['nama']);
+  $prodi =  htmlspecialchars($tambah['prodi']);
+  $foto =  htmlspecialchars($tambah['foto']);
+
+  $query = "UPDATE mahasiswa SET 
+            id=$id,
+            nim='$nim',
+            nama='$nama',
+            prodi='$prodi',
+            foto='$foto' WHERE `id`='$id'";
+  mysqli_query($con, $query);
+
+  echo mysqli_error($con);
+
+  return mysqli_affected_rows($con);
+  // mysqli_affected_rows($con) = angka (0: gak ada data masuk, 1:ada data masuk)
+}
